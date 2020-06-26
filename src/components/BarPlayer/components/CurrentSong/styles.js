@@ -1,25 +1,30 @@
 import { makeStyles } from '@material-ui/core';
 
+const limitSongInfoSize = {
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  display: 'initial',
+};
+
 const useStyles = makeStyles((theme) => ({
   songImage: {
     width: 56,
     height: 56,
     backgroundColor: 'orange',
-    marginRight: theme.spacing(2),
   },
   songInfos: {
-    maxWidth: '80%',
-    marginRight: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: theme.spacing(0, 2),
+    maxWidth: '70%',
   },
   artist: {
-    maxWidth: '100%',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    display: 'block',
+    ...limitSongInfoSize,
   },
   songName: {
-    marginBottom: -15,
+    ...limitSongInfoSize,
   },
 }));
 

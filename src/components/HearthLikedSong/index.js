@@ -9,7 +9,7 @@ const HearthLikedSong = ({ liked, size }) => {
   return liked ? (
     <Favorite className={classes.likedIcon} fontSize={size} />
   ) : (
-    <FavoriteBorder fontSize={size} />
+    <FavoriteBorder className={classes.notLikedIcon} fontSize={size} />
   );
 };
 
