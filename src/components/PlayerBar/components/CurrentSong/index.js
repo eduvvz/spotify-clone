@@ -8,7 +8,8 @@ const CurrentSong = () => {
 
   return (
     <Grid
-      sm={4}
+      sm={3}
+      md={4}
       container
       wrap="nowrap"
       justify="flex-start"
