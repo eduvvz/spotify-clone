@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   containerSongBar: {
     padding: theme.spacing(0, 1),
   },
+  iconActive: {
+    color: `${theme.palette.secondary.main} !important`,
+  },
 }));
 
 export default useStyles;

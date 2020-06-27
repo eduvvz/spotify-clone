@@ -1,17 +1,18 @@
 import update from 'react-addons-update';
-import { TOGGLE_SONG_PLAY } from '../actions/actionTypes';
+import {
+  TOGGLE_SONG_PLAY,
+  UPDATE_VOLUME,
+  TOGGLE_REPEAT,
+} from '../actions/actionTypes';
 import { racionaisMC } from '../../mock/songs';
 
 const INITIAL_STATE = {
   currentSong: {
-    name: 'Estilo Cachorro',
-    artists: ['Racionais Mc', 'Mano Brown'],
-    image:
-      'https://upload.wikimedia.org/wikipedia/pt/6/62/Nada_como_um_dia_após_o_outro_dia.jpg',
-    url: racionaisMC.estiloCachorro,
-    duration: 2,
-    isPlaying: false,
-    liked: true,
+    ...racionaisMC[0],
+  },
+  controls: {
+    repeat: false,
+    volume: 1,
   },
 };
 
@@ -21,6 +22,18 @@ export default (state = INITIAL_STATE, action) => {
       return update(state, {
         currentSong: {
           isPlaying: { $set: !state.currentSong.isPlaying },
+        },
+      });
+    case UPDATE_VOLUME:
+      return update(state, {
+        controls: {
+          volume: { $set: action.payload },
+        },
+      });
+    case TOGGLE_REPEAT:
+      return update(state, {
+        controls: {
+          repeat: { $set: !state.controls.repeat },
         },
       });
     default:

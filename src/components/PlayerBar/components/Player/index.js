@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid, CircularProgress } from '@material-ui/core';
+import classnames from 'classnames';
 import {
   PlayCircleOutline,
   PauseCircleOutline,
@@ -11,11 +12,12 @@ import {
   Shuffle,
 } from '@material-ui/icons';
 import SongBar from './components/SongBar';
-import { toggleSongPlay } from '../../../../redux/actions';
+import { toggleSongPlay, toggleRepeat } from '../../../../redux/actions';
 import useStyles from './styles';
 
 const Player = ({ songURI, isPlaying }) => {
   const dispatch = useDispatch();
+  const { volume, repeat } = useSelector((state) => state.song.controls);
   const classes = useStyles();
   const [song] = useState(new Audio(songURI));
   const [songMetaData, setSongMetaData] = useState({
@@ -23,6 +25,10 @@ const Player = ({ songURI, isPlaying }) => {
     currentTime: 0,
   });
   const [loadingSong, setLoadingSong] = useState(true);
+
+  useEffect(() => {
+    song.volume = volume;
+  }, [volume]);
 
   useEffect(() => {
     song.addEventListener('loadedmetadata', (e) => {
@@ -47,7 +53,7 @@ const Player = ({ songURI, isPlaying }) => {
       }));
       dispatch(toggleSongPlay());
     });
-  }, [song]);
+  }, [song, repeat]);
 
   useEffect(() => {
     if (isPlaying) song.play();
@@ -95,7 +101,12 @@ const Player = ({ songURI, isPlaying }) => {
         <SkipPrevious className={classes.controlSongIcons} />
         {renderButtonPlay()}
         <SkipNext className={classes.controlSongIcons} />
-        <Repeat className={classes.controlSongIcons} />
+        <Repeat
+          className={classnames(classes.controlSongIcons, {
+            [classes.iconActive]: repeat,
+          })}
+          onClick={() => dispatch(toggleRepeat())}
+        />
       </Grid>
       <SongBar
         currentTime={songMetaData.currentTime}
