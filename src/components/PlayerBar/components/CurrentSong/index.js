@@ -7,14 +7,7 @@ const CurrentSong = () => {
   const classes = useStyles();
 
   return (
-    <Grid
-      sm={3}
-      md={4}
-      container
-      wrap="nowrap"
-      justify="flex-start"
-      alignItems="center"
-    >
+    <Grid sm={3} md={4} container item justify="flex-start" alignItems="center">
       <div className={classes.songImage} />
       <div className={classes.songInfos}>
         <Typography className={classes.songName}>Somzin top</Typography>

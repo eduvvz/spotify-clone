@@ -14,11 +14,12 @@ const Player = () => {
   const classes = useStyles();
 
   return (
-    <Grid sm={6} md={4} container direction="column">
+    <Grid sm={6} md={4} container item direction="column">
       <Grid
         xs={12}
         className={classes.containerControl}
         container
+        item
         justify="center"
         alignItems="center"
       >

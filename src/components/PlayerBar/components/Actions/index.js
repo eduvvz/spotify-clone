@@ -8,7 +8,7 @@ const Actions = () => {
   const classes = useStyles();
 
   return (
-    <Grid sm={3} md={4} container justify="flex-end" alignItems="center">
+    <Grid sm={3} md={4} container item justify="flex-end" alignItems="center">
       <PlaylistPlay className={classes.controlSongIcons} />
       <DevicesOther className={classes.controlSongIcons} />
       <BarVolume />

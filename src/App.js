@@ -1,13 +1,11 @@
 import React from 'react';
-import Player from './components/BarPlayer';
+import Player from './components/PlayerBar';
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Player />
-      </div>
-    </>
+    <div className="App">
+      <Player />
+    </div>
   );
 }
 
