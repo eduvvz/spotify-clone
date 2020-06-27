@@ -20,7 +20,7 @@ const BarPlayer = () => {
           liked={currentSong.liked}
         />
       )}
-      <Player />
+      <Player songURI={currentSong.url} isPlaying={currentSong.isPlaying} />
       <Actions />
     </Grid>
   );

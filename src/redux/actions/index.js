@@ -1,7 +1,7 @@
-import { createStore } from 'redux';
+import { TOGGLE_SONG_PLAY } from './actionTypes';
 
-import { Reducers } from '../reducers';
-
-const store = createStore(Reducers);
-
-export default store;
+export function toggleSongPlay() {
+  return {
+    type: TOGGLE_SONG_PLAY,
+  };
+}

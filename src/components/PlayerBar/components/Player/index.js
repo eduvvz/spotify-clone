@@ -1,18 +1,86 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Grid, CircularProgress } from '@material-ui/core';
 import {
   PlayCircleOutline,
+  PauseCircleOutline,
   SkipPrevious,
   SkipNext,
   Repeat,
   Shuffle,
 } from '@material-ui/icons';
 import SongBar from './components/SongBar';
+import { toggleSongPlay } from '../../../../redux/actions';
 import useStyles from './styles';
 
-const Player = () => {
+const Player = ({ songURI, isPlaying }) => {
+  const dispatch = useDispatch();
   const classes = useStyles();
+  const [song] = useState(new Audio(songURI));
+  const [songMetaData, setSongMetaData] = useState({
+    duration: 0,
+    currentTime: 0,
+  });
+  const [loadingSong, setLoadingSong] = useState(true);
 
+  useEffect(() => {
+    song.addEventListener('loadedmetadata', (e) => {
+      setSongMetaData((prevSongMetaData) => ({
+        ...prevSongMetaData,
+        duration: e.target.duration,
+      }));
+      setLoadingSong(false);
+    });
+
+    song.addEventListener('timeupdate', (e) => {
+      setSongMetaData((prevSongMetaData) => ({
+        ...prevSongMetaData,
+        currentTime: e.target.currentTime,
+      }));
+    });
+
+    song.addEventListener('ended', () => {
+      setSongMetaData((prevSongMetaData) => ({
+        ...prevSongMetaData,
+        currentTime: 0,
+      }));
+      dispatch(toggleSongPlay());
+    });
+  }, [song]);
+
+  useEffect(() => {
+    if (isPlaying) song.play();
+    else song.pause();
+  }, [isPlaying]);
+
+  function changeCurrentTime(time) {
+    song.currentTime = time;
+  }
+
+  function renderButtonPlay() {
+    if (loadingSong) {
+      return <CircularProgress color="secondary" />;
+    }
+
+    if (isPlaying) {
+      return (
+        <PauseCircleOutline
+          className={classes.controlSongIcons}
+          fontSize="large"
+          onClick={() => dispatch(toggleSongPlay())}
+        />
+      );
+    }
+
+    return (
+      <PlayCircleOutline
+        className={classes.controlSongIcons}
+        fontSize="large"
+        onClick={() => dispatch(toggleSongPlay())}
+      />
+    );
+  }
   return (
     <Grid sm={6} md={4} container item direction="column">
       <Grid
@@ -25,16 +93,22 @@ const Player = () => {
       >
         <Shuffle className={classes.controlSongIcons} />
         <SkipPrevious className={classes.controlSongIcons} />
-        <PlayCircleOutline
-          className={classes.controlSongIcons}
-          fontSize="large"
-        />
+        {renderButtonPlay()}
         <SkipNext className={classes.controlSongIcons} />
         <Repeat className={classes.controlSongIcons} />
       </Grid>
-      <SongBar />
+      <SongBar
+        currentTime={songMetaData.currentTime}
+        songDuration={songMetaData.duration}
+        onChangeTime={changeCurrentTime}
+      />
     </Grid>
   );
+};
+
+Player.propTypes = {
+  songURI: PropTypes.string,
+  isPlaying: PropTypes.bool,
 };
 
 export default Player;

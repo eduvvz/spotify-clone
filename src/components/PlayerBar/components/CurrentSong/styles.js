@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme) => ({
   songImage: {
     width: 56,
     height: 56,
-    backgroundColor: 'orange',
+    backgroundImage: (props) => `url(${props.songImageURI})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
   },
   songInfos: {
     display: 'flex',
