@@ -18,7 +18,7 @@ const SongBar = ({ songDuration, currentTime, onChangeTime }) => {
     const barWidth = barSongEl.current.offsetWidth;
     const elapsedTime = ((currentTime * 100) / songDuration).toFixed(3);
     setProgressSong((elapsedTime / 100) * barWidth);
-  }, [currentTime]);
+  }, [currentTime, songDuration]);
 
   const onClickOrDragBarSong = (event) => {
     const barWidth = barSongEl.current.offsetWidth;

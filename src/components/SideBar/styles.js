@@ -1,8 +1,27 @@
 import { makeStyles } from '@material-ui/core';
-import { customScrollbar } from '../../utils/styles/globalStyles';
+import {
+  customScrollbar,
+  onHoverImageAlbuns,
+} from '../../utils/styles/globalStyles';
+
+const itemNav = (theme) => ({
+  display: 'flex',
+  alignItems: 'center',
+  borderRadius: 5,
+  padding: theme.spacing(0, 2),
+  margin: theme.spacing(0, 1),
+  height: 40,
+  color: theme.palette.text.secondary,
+  cursor: 'pointer',
+
+  '&:HOVER': {
+    color: theme.palette.text.primary,
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   sidebar: {
+    overflow: 'hidden',
     display: 'block',
     width: 232,
     height: 'calc(100vh - 90px)',
@@ -20,18 +39,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
 
     '& li': {
-      display: 'flex',
-      alignItems: 'center',
-      borderRadius: 5,
-      padding: theme.spacing(0, 2),
-      margin: theme.spacing(0, 1),
-      height: 40,
-      color: theme.palette.text.secondary,
-      cursor: 'pointer',
-
-      '&:HOVER': {
-        color: theme.palette.text.primary,
-      },
+      ...itemNav(theme),
     },
   },
   active: {
@@ -45,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
   iconNavbar: {
     fontSize: 28,
     marginRight: theme.spacing(2),
+  },
+  iconNavbarSmaller: {
+    fontSize: 20,
   },
   playlistMain: {
     padding: theme.spacing(3, 3, 1, 3),
@@ -96,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     padding: theme.spacing(0, 3),
     overflowY: 'auto',
+    transition: '.2s',
     maxHeight: (props) => `calc(100vh - 90px - ${props.heightMainSidebar}px)`,
   },
   playlistList: {
@@ -114,6 +126,30 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.primary,
       },
     },
+  },
+  footerSidebar: {
+    backgroundColor: theme.palette.primary.contrastText,
+    width: '100%',
+    height: 233,
+  },
+  itemNavInstallApp: {
+    ...itemNav(theme),
+    fontWeight: 600,
+  },
+  imageSongBar: {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    backgroundImage: (props) => `url(${props.songImageURI})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+
+    '&:HOVER *': {
+      display: 'flex',
+    },
+  },
+  hoverImageSongBar: {
+    ...onHoverImageAlbuns,
   },
 }));
 

@@ -14,3 +14,17 @@ export const customScrollbar = {
     background: theme.palette.text.secondary,
   },
 };
+
+export const onHoverImageAlbuns = {
+  position: 'absolute',
+  display: 'none',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 24,
+  height: 24,
+  borderRadius: '50%',
+  backgroundColor: theme.palette.primary.main,
+  opacity: 0.9,
+  right: 5,
+  top: 5,
+};

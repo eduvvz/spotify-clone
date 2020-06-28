@@ -28,7 +28,7 @@ const Player = ({ songURI, isPlaying }) => {
 
   useEffect(() => {
     song.volume = volume;
-  }, [volume]);
+  }, [volume, song]);
 
   useEffect(() => {
     song.addEventListener('loadedmetadata', (e) => {
@@ -53,12 +53,12 @@ const Player = ({ songURI, isPlaying }) => {
       }));
       dispatch(toggleSongPlay());
     });
-  }, [song]);
+  }, [song, dispatch]);
 
   useEffect(() => {
     if (isPlaying) song.play();
     else song.pause();
-  }, [isPlaying]);
+  }, [isPlaying, song]);
 
   function changeCurrentTime(time) {
     song.currentTime = time;

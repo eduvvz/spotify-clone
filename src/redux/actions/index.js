@@ -1,4 +1,9 @@
-import { TOGGLE_SONG_PLAY, UPDATE_VOLUME, TOGGLE_REPEAT } from './actionTypes';
+import {
+  TOGGLE_SONG_PLAY,
+  UPDATE_VOLUME,
+  TOGGLE_REPEAT,
+  TOGGLE_LARGE_IMAGE_SONG_SIDEBAR,
+} from './actionTypes';
 
 export function toggleSongPlay() {
   return {
@@ -16,5 +21,11 @@ export function updateVolume(payload) {
 export function toggleRepeat() {
   return {
     type: TOGGLE_REPEAT,
+  };
+}
+
+export function toggleLargeImageSongSidebar() {
+  return {
+    type: TOGGLE_LARGE_IMAGE_SONG_SIDEBAR,
   };
 }
