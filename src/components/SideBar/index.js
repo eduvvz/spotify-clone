@@ -4,7 +4,7 @@ import { Home, Search, Dehaze, Add, Favorite } from '@material-ui/icons';
 import classnames from 'classnames';
 import useStyles from './styles';
 import logo from '../../static/images/Spotify_Logo_RGB_White.png';
-import { playlists } from '../../mock/playlists';
+import { playlists } from '../../utils/mock/playlists';
 
 const SideBar = () => {
   const mainNavBarEl = useRef(null);

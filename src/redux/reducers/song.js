@@ -4,7 +4,7 @@ import {
   UPDATE_VOLUME,
   TOGGLE_REPEAT,
 } from '../actions/actionTypes';
-import { racionaisMC } from '../../mock/songs';
+import { racionaisMC } from '../../utils/mock/songs';
 
 const INITIAL_STATE = {
   currentSong: {

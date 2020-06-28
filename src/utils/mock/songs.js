@@ -1,4 +1,4 @@
-const estiloCachorro = require('../static/songs/Estilo cachorro - Racionais Mcs.mp3');
+const estiloCachorro = require('../../static/songs/Estilo cachorro - Racionais Mcs.mp3');
 
 export const racionaisMC = [
   {
