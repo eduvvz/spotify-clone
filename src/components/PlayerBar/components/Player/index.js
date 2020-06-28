@@ -53,7 +53,7 @@ const Player = ({ songURI, isPlaying }) => {
       }));
       dispatch(toggleSongPlay());
     });
-  }, [song, repeat]);
+  }, [song]);
 
   useEffect(() => {
     if (isPlaying) song.play();

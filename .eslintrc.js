@@ -27,6 +27,7 @@ module.exports = {
     'react/require-default-props': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
+    'react/no-array-index-key': 0,
     'jsx-a11y/media-has-caption': [
       0,
       {

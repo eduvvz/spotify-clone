@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Provider } from 'react-redux';
 import App from './App';
-import theme from './theme';
+import theme from './utils/styles/theme';
 import store from './redux/store';
 
 const DOM = (
