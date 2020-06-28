@@ -4,11 +4,12 @@ import {
   UPDATE_VOLUME,
   TOGGLE_REPEAT,
 } from '../actions/actionTypes';
-import { racionaisMC } from '../../utils/mock/songs';
+import { djonga } from '../../utils/mock/songs';
 
 const INITIAL_STATE = {
   currentSong: {
-    ...racionaisMC[0],
+    ...djonga[0],
+    isPlaying: false,
   },
   controls: {
     repeat: false,
