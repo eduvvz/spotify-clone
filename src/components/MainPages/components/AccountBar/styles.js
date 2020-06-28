@@ -39,7 +39,13 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(4),
     borderRadius: theme.spacing(4),
     minWidth: 32,
+    transition: '.3s',
+    cursor: 'pointer',
     backgroundColor: theme.palette.primary.contrastText,
+
+    '&:HOVER': {
+      backgroundColor: theme.palette.primary.light,
+    },
   },
   iconBtnProfile: {
     fontSize: 20,
@@ -56,6 +62,11 @@ const useStyles = makeStyles((theme) => ({
   },
   nameProfile: {
     fontWeight: 600,
+    maxWidth: 110,
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    display: 'initial',
   },
 }));
 
