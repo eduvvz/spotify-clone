@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import {
   customScrollbar,
   onHoverImageAlbuns,
+  separator,
 } from '../../utils/styles/globalStyles';
 
 const itemNav = (theme) => ({
@@ -67,13 +68,7 @@ const useStyles = makeStyles((theme) => ({
   playlistTitle: {
     marginBottom: theme.spacing(2),
   },
-  separator: {
-    width: '100%',
-    height: 1,
-    backgroundColor: theme.palette.text.secondary,
-    marginTop: theme.spacing(2),
-    opacity: 0.3,
-  },
+  separator,
   playListTarget: {
     display: 'flex',
     alignItems: 'center',

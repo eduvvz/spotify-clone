@@ -28,3 +28,11 @@ export const onHoverImageAlbuns = {
   right: 5,
   top: 5,
 };
+
+export const separator = {
+  width: '100%',
+  height: 1,
+  backgroundColor: theme.palette.text.secondary,
+  marginTop: theme.spacing(2),
+  opacity: 0.3,
+};

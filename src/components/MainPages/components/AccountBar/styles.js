@@ -1,5 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 
+import { separator } from '../../../../utils/styles/globalStyles';
+
 const useStyles = makeStyles((theme) => ({
   accountBar: {
     padding: theme.spacing(0, 4),
@@ -76,6 +78,28 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
+  },
+  dropdownAccountBtn: {
+    marginTop: theme.spacing(1),
+  },
+  paperAccountItems: {
+    width: 195,
+    overflow: 'hidden',
+    backgroundColor: theme.palette.primary.dark,
+    border: 'none',
+
+    '& div': {
+      height: 38,
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      padding: theme.spacing(0, 2),
+    },
+  },
+  separator: {
+    ...separator,
+    display: 'block',
+    marginTop: 0,
   },
 }));
 
