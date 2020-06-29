@@ -19,18 +19,32 @@ const Player = ({ songURI, isPlaying }) => {
   const dispatch = useDispatch();
   const { volume, repeat } = useSelector((state) => state.song.controls);
   const classes = useStyles();
-  const [song] = useState(new Audio(songURI));
+  const [song, setSong] = useState(null);
   const [songMetaData, setSongMetaData] = useState({
     duration: 0,
     currentTime: 0,
   });
-  const [loadingSong, setLoadingSong] = useState(true);
+  const [loadingSong, setLoadingSong] = useState(false);
 
   useEffect(() => {
+    setLoadingSong(true);
+
+    if (song) {
+      // não achei outra forma de matar o aúdio :/
+      song.src = '';
+    }
+
+    setSong(new Audio(songURI));
+  }, [songURI]);
+
+  useEffect(() => {
+    if (!song) return;
     song.volume = volume;
   }, [volume, song]);
 
   useEffect(() => {
+    if (!song) return;
+
     song.addEventListener('loadedmetadata', (e) => {
       setSongMetaData((prevSongMetaData) => ({
         ...prevSongMetaData,
@@ -56,11 +70,13 @@ const Player = ({ songURI, isPlaying }) => {
   }, [song, dispatch]);
 
   useEffect(() => {
+    if (!song) return;
     if (isPlaying) song.play();
     else song.pause();
   }, [isPlaying, song]);
 
   function changeCurrentTime(time) {
+    if (!song) return;
     song.currentTime = time;
   }
 

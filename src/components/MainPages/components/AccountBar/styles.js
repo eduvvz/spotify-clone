@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     backgroundColor: 'rgba(4, 4, 4, 0)',
     transition: '.3s',
+    zIndex: 99,
   },
   showBgAccountbar: {
     backgroundColor: 'rgba(4, 4, 4, 1) !important',
@@ -50,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
   iconBtnProfile: {
     fontSize: 20,
     margin: theme.spacing(0, 1),
+
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
   pictureProfile: {
     width: 28,
@@ -67,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     display: 'initial',
+
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
 }));
 

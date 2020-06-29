@@ -9,20 +9,16 @@ const MainPages = () => {
   const [positionScroll, setPositionScroll] = useState(0);
   const classes = useStyles();
 
-  const handleScroll = ({ target }) => {
-    setPositionScroll(target.scrollTop);
-  };
-
   useEffect(() => {
     if (!mainContainer) return;
+
+    const handleScroll = ({ target }) => {
+      setPositionScroll(target.scrollTop);
+    };
 
     mainContainer.current.addEventListener('scroll', handleScroll, {
       passive: true,
     });
-
-    return () => {
-      mainContainer.current.removeEventListener('scroll', handleScroll);
-    };
   }, [mainContainer]);
 
   return (

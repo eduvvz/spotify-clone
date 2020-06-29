@@ -1,4 +1,5 @@
 export const TOGGLE_SONG_PLAY = 'TOGGLE_SONG_PLAY';
+export const PLAY_A_SONG = 'PLAY_A_SONG';
 
 export const UPDATE_VOLUME = 'UPDATE_VOLUME';
 export const TOGGLE_REPEAT = 'TOGGLE_REPEAT';

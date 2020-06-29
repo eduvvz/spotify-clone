@@ -3,11 +3,19 @@ import {
   UPDATE_VOLUME,
   TOGGLE_REPEAT,
   TOGGLE_LARGE_IMAGE_SONG_SIDEBAR,
+  PLAY_A_SONG,
 } from './actionTypes';
 
 export function toggleSongPlay() {
   return {
     type: TOGGLE_SONG_PLAY,
+  };
+}
+
+export function playASong(payload) {
+  return {
+    type: PLAY_A_SONG,
+    payload,
   };
 }
 

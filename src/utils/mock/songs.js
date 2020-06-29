@@ -30,7 +30,7 @@ export const charlieBrownJr = [
 export const snoopDogg = [
   {
     name: 'Who Am I',
-    artists: 'Snoop Dogg',
+    artists: ['Snoop Dogg'],
     image:
       'https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/3/e/4/a/22340.jpg',
     url: snoopSong1,
@@ -38,7 +38,7 @@ export const snoopDogg = [
   },
   {
     name: 'Gin And Juice',
-    artists: 'Snoop Dogg',
+    artists: ['Snoop Dogg'],
     image:
       'https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/3/e/4/a/22340.jpg',
     url: snoopSong2,

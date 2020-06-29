@@ -13,7 +13,7 @@ const AccountBar = ({ positionScroll }) => {
   return (
     <Grid
       className={classnames(classes.accountBar, {
-        [classes.showBgAccountbar]: positionScroll > 220 || false,
+        [classes.showBgAccountbar]: positionScroll > 40 || false,
       })}
       justify="space-between"
       alignItems="center"

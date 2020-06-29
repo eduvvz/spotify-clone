@@ -1,6 +1,7 @@
 import update from 'react-addons-update';
 import {
   TOGGLE_SONG_PLAY,
+  PLAY_A_SONG,
   UPDATE_VOLUME,
   TOGGLE_REPEAT,
 } from '../actions/actionTypes';
@@ -24,6 +25,10 @@ export default (state = INITIAL_STATE, action) => {
         currentSong: {
           isPlaying: { $set: !state.currentSong.isPlaying },
         },
+      });
+    case PLAY_A_SONG:
+      return update(state, {
+        currentSong: { $set: action.payload },
       });
     case UPDATE_VOLUME:
       return update(state, {
