@@ -7,6 +7,7 @@ const djongaSong = require('../../static/songs/3 . Djonga - UFA.mp3');
 
 export const racionaisMC = [
   {
+    id: 1,
     name: 'Estilo Cachorro',
     artists: ['Racionais Mc'],
     image:
@@ -18,6 +19,7 @@ export const racionaisMC = [
 
 export const charlieBrownJr = [
   {
+    id: 2,
     name: 'Sem Medo da Escuridão',
     artists: ['Charlie Brown Jr', 'MV Bill'],
     image:
@@ -29,6 +31,7 @@ export const charlieBrownJr = [
 
 export const snoopDogg = [
   {
+    id: 3,
     name: 'Who Am I',
     artists: ['Snoop Dogg'],
     image:
@@ -37,6 +40,7 @@ export const snoopDogg = [
     liked: true,
   },
   {
+    id: 4,
     name: 'Gin And Juice',
     artists: ['Snoop Dogg'],
     image:
@@ -48,6 +52,7 @@ export const snoopDogg = [
 
 export const hotOreia = [
   {
+    id: 5,
     name: 'Eu Vou',
     artists: ['Hot e Oreia', 'Djonga'],
     image:
@@ -59,6 +64,7 @@ export const hotOreia = [
 
 export const djonga = [
   {
+    id: 6,
     name: 'UFA',
     artists: ['Djonga', 'Sidoka', 'Sant'],
     image:
