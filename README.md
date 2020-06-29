@@ -1,68 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Spotify Clone
 
-## Available Scripts
+Bem, aqui vou fazer algumas considerações e pontuar minhas percepções sobre o projeto. 
 
-In the project directory, you can run:
+Primeiramente gostaria de agradecer a você por dedicar teus 5 minutinhos para ler isso. Fico muito Feliz.
 
-### `yarn start`
+Bem, basicamente posso adiantar a vocês que meu projeto ficou muito bom kkkk, espero que vocês gostem tanto quanto eu gostei. 
+Acredito que foi um dos testes que eu mais gostei e fiquei imersivo fazendo, cada nova feature que eu realizava me dava mais vontade de ir além e etc. Por essa e outras que o player está funcionando kkkk. Além do mais busquei fazer a única animação da página que é quando você expande o o ícone da música. Além disso só não coloquei mais variedades de músicas por conta do tempo. (Inclusive são músicas que estavam no meu recentemente tocado no real spotify).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Cara, esse projeto, acredito que simboliza bem o meu nível atual de React, que eu julgo ser bem maduro. Hoje em dia não me vejo inicializar um projeto sem ter o eslint configurado, ou o prop-types. Além de que me vejo caindo cada vez mais em dilemas da programação funcional e gostando. Por essas e outras adicionei a lib "react-addons-update". Ela me porporciona um state imutável, e assim temos algumas melhorias como performance e outras coisas, bem ainda estou testando essa lib, não sei ela realmente irá fazer parte do mue escopo básico para se criar um projeto, visto que tem outras interessantes também como a Immutable.JS.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Bem, chega de elogiar meu projeto, aqui vou fazer uma critica a ele. Infelizmente na minha visão, minha camada de style poderia ter sido melhor modularizada, acabei deixando muito style repetido e etc. Onde se eu tivesse um pouco mais de tempo, acabaria dando um jeito nisso, não resistiria. 
 
-### `yarn test`
+Basicamente é isso que eu tinha para dizer, espero realmente que gostem. O projeto, como eu já disse, simboliza bem meu nível atual. O que acredito que faltou é eu demonstrar como eu faria uma camada de services, para realizar get's, post's e etc. E gostaria de frizar aqui que a estrutura de mock que fiz, é bem básica. Resolvi não investir um tempo pra deixar mais complexa e real, por conta que acredito que vocês estavam interessados em ver outras paradas do meu código.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Muito obrigado pela oportunidade, e espero que goste!
