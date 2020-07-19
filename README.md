@@ -1,5 +1,7 @@
 ## Spotify Clone
 
+[Versão hospedada.](https://spotify-clone-one.vercel.app)
+
 Bem, aqui vou fazer algumas considerações e pontuar minhas percepções sobre o projeto. 
 
 Primeiramente gostaria de agradecer a você por dedicar teus 5 minutinhos para ler isso. Fico muito Feliz.
