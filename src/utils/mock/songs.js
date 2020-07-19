@@ -1,5 +1,5 @@
 const estiloCachorro = require('../../static/songs/Estilo cachorro - Racionais Mcs.mp3');
-const semMedoDaEscuridao = require('../../static/songs/Sem Medo da Escuridão - Charlie Brown Jr..mp3');
+const semMedoDaEscuridao = require('../../static/songs/Sem-Medo-da-Escuridão-Charlie-Brown Jr.mp3');
 const snoopSong1 = require('../../static/songs/snoop doggy dogg.mp3');
 const snoopSong2 = require('../../static/songs/Snoop Dogg-Gin And Juice.mp3');
 const hotOreiaSong = require('../../static/songs/Eu Vou.mp3');
