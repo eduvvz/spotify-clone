@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, getByTestId } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import AccountBar from './index';
 import { Provider } from 'react-redux';
 import store from '../../../../redux/store';
@@ -7,7 +7,7 @@ import { screen, fireEvent } from '@testing-library/dom';
 
 describe('AccountBar testes', () => {
   test('não deve mostrar o popover inicialmente.', () => {
-    const { queryByTestId, container } = render(
+    const { queryByTestId } = render(
       <Provider store={store}>
         <AccountBar positionScroll={0} />
       </Provider>

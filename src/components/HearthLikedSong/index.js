@@ -7,9 +7,17 @@ const HearthLikedSong = ({ liked, size }) => {
   const classes = useStyles();
 
   return liked ? (
-    <Favorite className={classes.likedIcon} fontSize={size} />
+    <Favorite
+      data-testid="hearthlikedsong-icon-favorite"
+      className={classes.likedIcon}
+      fontSize={size}
+    />
   ) : (
-    <FavoriteBorder className={classes.notLikedIcon} fontSize={size} />
+    <FavoriteBorder
+      data-testid="hearthlikedsong-icon-favoriteborder"
+      className={classes.notLikedIcon}
+      fontSize={size}
+    />
   );
 };
 
