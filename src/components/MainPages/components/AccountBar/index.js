@@ -21,6 +21,7 @@ const AccountBar = ({ positionScroll }) => {
 
   return (
     <Grid
+      data-testid="accountbar-container"
       className={classnames(classes.accountBar, {
         [classes.showBgAccountbar]: positionScroll > 40 || false,
       })}
@@ -37,7 +38,11 @@ const AccountBar = ({ positionScroll }) => {
         </div>
       </div>
 
-      <div className={classes.buttonProfile} onClick={handleClick}>
+      <div
+        className={classes.buttonProfile}
+        onClick={handleClick}
+        data-testid="accountbar-btn-profile"
+      >
         <div className={classes.pictureProfile} />
         <Typography variant="subtitle2" className={classes.nameProfile}>
           {user.name}
@@ -50,6 +55,7 @@ const AccountBar = ({ positionScroll }) => {
         anchorEl={anchorEl}
         onClose={handleClose}
         className={classes.dropdownAccountBtn}
+        data-testid="accountbar-paper-account-options"
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',

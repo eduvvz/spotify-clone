@@ -37,4 +37,5 @@ module.exports = {
       },
     ],
   },
+  eslintIgnore: ["*.test.js"]
 };

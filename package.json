@@ -7,7 +7,6 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
@@ -40,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
