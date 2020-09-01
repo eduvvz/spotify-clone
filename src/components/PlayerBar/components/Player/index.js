@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid, CircularProgress } from '@material-ui/core';
@@ -26,7 +26,7 @@ const Player = ({ songURI, isPlaying }) => {
   });
   const [loadingSong, setLoadingSong] = useState(false);
 
-  useEffect(() => {
+  const restartSong = useCallback(() => {
     setLoadingSong(true);
 
     if (song) {
@@ -35,7 +35,9 @@ const Player = ({ songURI, isPlaying }) => {
     }
 
     setSong(new Audio(songURI));
-  }, [songURI]);
+  }, [song, songURI]);
+
+  useEffect(restartSong, [songURI]);
 
   useEffect(() => {
     if (!song) return;
