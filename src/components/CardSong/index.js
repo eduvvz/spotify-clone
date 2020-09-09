@@ -17,11 +17,20 @@ const CardSong = ({ song, imageCircle }) => {
     return <PlayArrow />;
   }
 
+  function onClickBtnPlay() {
+    if (currentSong.isPlaying && currentSong.id === song.id) {
+      dispatch(toggleSongPlay());
+    } else {
+      dispatch(playASong(song));
+      dispatch(toggleSongPlay());
+    }
+  }
+
   return (
     <Grid xs={12} sm={6} md={3} lg={2} item>
-      <div className={classes.card}>
+      <div className={classes.card} data-testid="cardsong">
         <div className={classes.cardImage}>
-          <img src={song.image} alt={song.name} />
+          <img src={song.image} alt={song.name} data-testid="cardsong-image" />
         </div>
         <Typography data-testid="cardsong-name" className={classes.nameSong}>
           {song.name}
@@ -35,15 +44,9 @@ const CardSong = ({ song, imageCircle }) => {
         </Typography>
         <div
           className={classes.buttonPlay}
+          data-testid="cardsong-btnplay"
           id="button-play"
-          onClick={() => {
-            if (currentSong.isPlaying && currentSong.id === song.id) {
-              dispatch(toggleSongPlay());
-            } else {
-              dispatch(playASong(song));
-              dispatch(toggleSongPlay());
-            }
-          }}
+          onClick={onClickBtnPlay}
         >
           {renderIcon()}
         </div>

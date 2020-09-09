@@ -16,7 +16,9 @@ describe('CardSong testes', () => {
       </Provider>
     );
 
-    expect(getByTestId('cardsong-name').innerHTML.includes(songMock.name)).toBe(true);
+    expect(getByTestId('cardsong-name').innerHTML.includes(songMock.name)).toBe(
+      true
+    );
   });
 
   test('Deve exibir o artista da música', () => {
@@ -28,6 +30,18 @@ describe('CardSong testes', () => {
 
     const artistsName = songMock.artists[0];
 
-    expect(getByTestId('cardsong-artist').innerHTML.includes(artistsName)).toBe(true);
+    expect(getByTestId('cardsong-artist').innerHTML.includes(artistsName)).toBe(
+      true
+    );
+  });
+
+  test('Deve exibir a imagem da música', () => {
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <CardSong song={songMock} />
+      </Provider>
+    );
+
+    expect(getByTestId('cardsong-image').getAttribute('src')).toBe(songMock.image);
   });
 });

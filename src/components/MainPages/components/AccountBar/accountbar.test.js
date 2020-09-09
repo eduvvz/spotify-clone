@@ -38,8 +38,8 @@ describe('AccountBar testes', () => {
 
     const accountBar = screen.getByTestId('accountbar-container');
     const styles = window.getComputedStyle(accountBar);
-    
-    expect(styles.backgroundColor).toBe('rgba(4, 4, 4, 0)');;
+
+    expect(styles.backgroundColor).toBe('rgba(4, 4, 4, 0)');
   });
 
   test('Deve mostrar o fundo com cor depois de 40px rolados pelo scroll', () => {
@@ -51,7 +51,7 @@ describe('AccountBar testes', () => {
 
     const accountBar = screen.getByTestId('accountbar-container');
     const styles = window.getComputedStyle(accountBar);
-    
-    expect(styles.backgroundColor).toBe('rgb(4, 4, 4)');;
+
+    expect(styles.backgroundColor).toBe('rgb(4, 4, 4)');
   });
 });
