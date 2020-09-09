@@ -23,8 +23,14 @@ const CardSong = ({ song, imageCircle }) => {
         <div className={classes.cardImage}>
           <img src={song.image} alt={song.name} />
         </div>
-        <Typography className={classes.nameSong}>{song.name}</Typography>
-        <Typography className={classes.artistSong} color="textSecondary">
+        <Typography data-testid="cardsong-name" className={classes.nameSong}>
+          {song.name}
+        </Typography>
+        <Typography
+          data-testid="cardsong-artist"
+          className={classes.artistSong}
+          color="textSecondary"
+        >
           {song.artists[0]}
         </Typography>
         <div
